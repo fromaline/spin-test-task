@@ -1,0 +1,33 @@
+.balances {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  > *:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  table {
+    thead {
+      tr {
+        th {
+          text-align: left;
+          color: var(--secondary);
+          font-size: 0.75rem;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          font-size: 0.875rem;
+          font-weight: 400;
+          line-height: 17px;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+}

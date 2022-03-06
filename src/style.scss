@@ -1,0 +1,236 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 0px 4px #fff;
+  }
+}
+
+html {
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+}
+
+:root {
+  --gap: 1.25rem;
+  --padding-big: 6rem;
+  --padding-v: 1.75rem;
+  --padding-h: 1.25rem;
+  --text-size: 1.125rem;
+  --text-size-sm: 0.9375rem;
+  --bg: #14161e;
+  --bg-01: #1f222d;
+  --bg-02: #2a2e39;
+  --bg-03: #0b0d15;
+  --border: #000;
+  --bg-overlay: rgba(0, 0, 0, 0.8);
+  --primary: #fff;
+  --primary-btn: #0e0f13;
+  --secondary: #7b8096;
+  --tertiary: #474b5f;
+  --red: #ff6190;
+  --red-brand: #ed739b;
+  --green: #75f9c9;
+  --green-brand: #c5fcdb;
+  --warning: #ffb525;
+  --button-primary: #94f9bd;
+  --button-primary-hover: #5be693;
+  --button-primary-active: #52cc83;
+  --button-secondary: #2a2e39;
+  --button-secondary-hover: #595959;
+  --button-secondary-active: #737373;
+  --button-ghost: transparent;
+  --button-ghost-hover: #1f222d;
+  --button-ghost-active: #2a2e39;
+  --button-danger: #f5354c;
+  --button-danger-hover: #b9091e;
+  --button-danger-active: #a9081b;
+  --block: #161616;
+  --block-black: #101010;
+  --block-hover: #3b3c3e;
+  --yellow: #ffb525;
+  --purple: #c25aff;
+  --toastWidth: 22rem;
+  --toastContainerTop: auto;
+  --toastContainerRight: auto;
+  --toastContainerBottom: 1.5em;
+  --toastContainerLeft: 1.5em;
+  --toastBackground: var(--bg-01);
+  --toastColor: var(--primary);
+  --toastBorderRadius: 8px;
+  --toastBorder: 1px solid var(--bg-02);
+  --toastBarHeight: 0px;
+  --toastBarBackground: hsla(0, 0%, 100%, 0.15);
+  --toastMsgPadding: 0.75rem;
+  --toastBoxShadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+#root {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+h1 {
+  margin-bottom: var(--gap);
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.btn {
+  color: var(--primary-btn);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: var(--text-size-sm);
+  line-height: 1.33;
+  padding: 0.75em 1em;
+  border-radius: 4px;
+  background-color: var(--button-primary);
+
+  &--sm {
+    font-weight: 400;
+    min-height: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &--tertiary {
+    color: var(--primary);
+    background-color: var(--button-ghost-hover);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--gap);
+  padding-left: var(--gap);
+}
+
+select {
+  // Additional resets for further consistency
+  background-color: var(--bg-01);
+  border: 1px solid var(--border);
+  padding: 0.25rem;
+  color: var(--primary);
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+
+  &::after {
+    content: '';
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--select-arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+}
+
+@import url('./dashboard/style.scss');
+@import url('./signIn/style.scss');

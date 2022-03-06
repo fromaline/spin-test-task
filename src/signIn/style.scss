@@ -1,0 +1,14 @@
+.sign-in {
+  margin: auto;
+
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    > *:not(:last-child) {
+      margin-bottom: var(--gap);
+    }
+  }
+}

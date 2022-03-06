@@ -1,0 +1,33 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--gap);
+    padding-bottom: var(--gap);
+  }
+
+  &__layout {
+    margin: auto;
+    display: grid;
+    gap: 0 0;
+    grid-template-areas: '. .';
+    grid-template-columns: 1fr minmax(281px, 301px);
+    grid-template-rows: 1fr;
+    min-height: 200px;
+    border: 2px solid var(--tertiary);
+
+    > *:not(:last-child) {
+      border-right: 2px solid var(--tertiary);
+    }
+  }
+}
+
+@import url('./balances/style.scss');
+@import url('./orderBook/style.scss');
