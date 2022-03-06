@@ -11,3 +11,7 @@ yarn install
 ```sh
 yarn dev
 ```
+
+
+### Todo
+- [ ] Figure out how to format exponential numbers properly
