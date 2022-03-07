@@ -16,4 +16,4 @@ It's a parcel-based build, so open [http://localhost:1234/](http://localhost:123
 
 
 ### Todo
-- [ ] Figure out how to format exponential numbers properly
+- [x] Figure out how to format exponential numbers properly
