@@ -9,7 +9,11 @@ $title.textContent = 'Order Book';
 
 $orderBook.append($title);
 
+const $tableWrapper = document.createElement('div');
+$tableWrapper.classList.add('table-wrapper');
+
 $orderBook.addEventListener('mounted', async () => {
+  // #region initial initialization of order table
   const tickers = await window.contract.markets({});
 
   const $select = getSelect(tickers);
@@ -24,12 +28,10 @@ $orderBook.addEventListener('mounted', async () => {
     tickers[0].quote.ticker
   );
 
-  const $tableWrapper = document.createElement('div');
-  $tableWrapper.classList.add('table-wrapper');
-
   $tableWrapper.append($orderTable);
 
   $orderBook.append($select, $tableWrapper);
+  // #endregion
 
   $select.addEventListener('change', async (e) => {
     const $target = e.target as HTMLSelectElement;

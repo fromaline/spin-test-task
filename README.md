@@ -12,6 +12,8 @@ yarn install
 yarn dev
 ```
 
+It's a parcel-based build, so open [http://localhost:1234/](http://localhost:1234/)
+
 
 ### Todo
 - [ ] Figure out how to format exponential numbers properly

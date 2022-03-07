@@ -3,7 +3,7 @@ import nearConfig from '../constants/config';
 const $form = document.createElement('form');
 $form.classList.add('form');
 
-// #region button
+// #region sign in button
 const $button = document.createElement('button');
 $button.setAttribute('type', 'submit');
 $button.classList.add('btn');
@@ -18,8 +18,6 @@ $form.addEventListener('submit', (e) => {
   window.walletAccount.requestSignIn(
     nearConfig.contractName,
     'Account Balance'
-    // We can also provide URLs to redirect on success and failure.
-    // The current URL is used by default.
   );
 });
 
