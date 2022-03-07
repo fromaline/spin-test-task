@@ -19,9 +19,9 @@ const getTable = (
       });
 
       $thead.append($trInThead);
-      // #endregion
 
       $table.append($thead);
+      // #endregion
     } else {
       // #region tbody
       const $trInBody = document.createElement('tr');
@@ -35,9 +35,9 @@ const getTable = (
       });
 
       $tbody.append($trInBody);
-      // #endregion
 
       $table.append($tbody);
+      // #endregion
     }
   });
 

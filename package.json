@@ -31,7 +31,6 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "near-api-js": "^0.43.1",
-    "near-units": "^0.1.9"
+    "near-api-js": "^0.43.1"
   }
 }

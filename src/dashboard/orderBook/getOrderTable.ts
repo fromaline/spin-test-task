@@ -1,18 +1,18 @@
+import { NEAR_NOMINATION_EXP } from 'near-api-js/lib/utils/format';
 import getTable from '../../utils/getTable';
 
-const trimTrailingZeroes = (value: number) => +value.toPrecision(5) / 1e21;
-const formatNum = (value: number) => value.toLocaleString().replace(',', '.');
+const exponentialToReadable = (value: number) =>
+  value / 10 ** NEAR_NOMINATION_EXP;
+
+const toFloat = (num: number, fractionDigits = 4) =>
+  parseFloat(num.toString()).toFixed(fractionDigits);
 
 const formatOrder = ({ price, quantity }: Order) => {
-  const trimmedPrice = trimTrailingZeroes(price);
-  const trimmedQuantity = trimTrailingZeroes(quantity);
-  const total = (trimmedPrice * trimmedQuantity) / 1e4;
+  const readablePrice = exponentialToReadable(price);
+  const readableQuantity = exponentialToReadable(quantity);
+  const total = readablePrice * readableQuantity;
 
-  return [
-    formatNum(trimmedPrice),
-    formatNum(trimmedQuantity),
-    formatNum(total),
-  ];
+  return [toFloat(readablePrice), toFloat(readableQuantity), toFloat(total, 2)];
 };
 
 const getOrderTable = (
